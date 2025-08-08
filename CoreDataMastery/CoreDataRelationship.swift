@@ -36,6 +36,16 @@ class CoreDataRelationshipViewModel: ObservableObject {
     let manager = CoreDataManager.instance
     @Published var businesses: [BusinessEntity] = []
     
+    func addBusiness(){
+        let newBusiness = BusinessEntity(context: manager.context)
+        newBusiness.name = "Apple"
+        
+    }
+    
+    func save(){
+        manager.save()
+    }
+    
 }
 
 struct CoreDataRelationship: View {
